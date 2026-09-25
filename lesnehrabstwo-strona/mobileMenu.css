@@ -1,0 +1,486 @@
+/* =====================================================
+   LEŚNE HRABSTWO
+   MOBILE / TABLET MENU
+   ===================================================== */
+
+
+/* =====================================================
+   DESKTOP — HIDDEN
+   ===================================================== */
+
+.mobile-nav,
+.mobile-menu {
+    display: none;
+}
+
+
+/* =====================================================
+   TABLET + MOBILE
+   ===================================================== */
+
+@media (max-width: 1500px) {
+
+    /* -------------------------
+       TOP BAR
+       ------------------------- */
+
+    .mobile-nav {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 80px;
+
+        padding: 0 30px;
+
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        z-index: 31;
+
+        pointer-events: none;
+
+        overflow: hidden;
+    }
+
+
+    /* -------------------------
+       LOGO
+       ------------------------- */
+
+    .mobile-logo {
+        color: #ffffff;
+
+        font-family: "Alexandria", sans-serif;
+
+        font-size: 15px;
+        font-weight: 500;
+
+        letter-spacing: 0.04em;
+
+        text-decoration: none;
+
+        pointer-events: auto;
+
+        min-width: 0;
+    }
+
+
+    /* -------------------------
+       HAMBURGER
+       ------------------------- */
+
+    .mobile-menu-btn {
+        width: 50px;
+        height: 50px;
+
+        padding: 0;
+        margin: 0;
+
+        border: none;
+        background: transparent;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: flex-end;
+
+        gap: 7px;
+
+        cursor: pointer;
+
+        pointer-events: auto;
+
+        flex-shrink: 0;
+    }
+
+
+    .mobile-menu-btn span {
+        display: block;
+
+        width: 32px;
+        height: 2px;
+
+        background: #ffffff;
+
+        transition:
+            transform 0.5s cubic-bezier(.77,0,.18,1),
+            width 0.4s ease;
+    }
+
+
+    .mobile-menu-btn span:last-child {
+        width: 22px;
+    }
+
+
+    /* -------------------------
+       FULL SCREEN MENU
+       ------------------------- */
+
+    .mobile-menu {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 110px 30px 35px;
+
+        box-sizing: border-box;
+
+        background-image: linear-gradient(rgb(107, 128, 68, 0.8)),
+    url("/images/ice\ texture.jpg");
+
+        z-index: 30;
+
+        display: flex;
+        flex-direction: column;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        visibility: hidden;
+        opacity: 0;
+
+        clip-path: inset(0 0 100% 0);
+
+        transition:
+            clip-path 0.7s cubic-bezier(.77,0,.18,1),
+            opacity 0.2s ease,
+            visibility 0s linear 0.7s;
+    }
+
+
+    /* -------------------------
+       OPEN
+       ------------------------- */
+
+    .mobile-menu.active {
+        visibility: visible;
+
+        opacity: 1;
+
+        clip-path: inset(0 0 0 0);
+
+        transition:
+            clip-path 0.7s cubic-bezier(.77,0,.18,1),
+            opacity 0.2s ease;
+    }
+
+
+    /* -------------------------
+       TOP INFO
+       ------------------------- */
+
+    .mobile-menu-top {
+        display: flex;
+
+        justify-content: space-between;
+        align-items: center;
+
+        width: 100%;
+        min-width: 0;
+
+        padding-bottom: 25px;
+
+        border-bottom: 1px solid rgba(255,255,255,0.25);
+
+        color: #d2d2d2;
+
+        font-family: "Alexandria", sans-serif;
+
+        font-size: 11px;
+
+        letter-spacing: 0.08em;
+
+        text-transform: uppercase;
+    }
+
+
+    .mobile-menu-top span {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+
+    /* -------------------------
+       LINKS
+       ------------------------- */
+
+    .mobile-menu-links {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+        min-width: 0;
+
+        margin-top: 35px;
+    }
+
+
+    .mobile-menu-links a {
+        display: grid;
+
+        grid-template-columns: 45px minmax(0, 1fr);
+
+        align-items: baseline;
+
+        width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+
+        padding: 14px 0;
+
+        color: #ffffff;
+
+        text-decoration: none;
+
+        font-family: "Alexandria", sans-serif;
+
+        font-size: clamp(38px, 6vw, 70px);
+
+        font-weight: 400;
+
+        line-height: 1.05;
+
+        opacity: 0;
+
+        transform: translateY(35px);
+
+        transition:
+            opacity 0.5s ease,
+            transform 0.6s cubic-bezier(.77,0,.18,1),
+            color 0.3s ease;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    .mobile-menu-links a span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* -------------------------
+       LINK ANIMATION
+       ------------------------- */
+
+    .mobile-menu.active .mobile-menu-links a {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+
+    .mobile-menu.active .mobile-menu-links a:nth-child(1) {
+        transition-delay: 0.10s;
+    }
+
+    .mobile-menu.active .mobile-menu-links a:nth-child(2) {
+        transition-delay: 0.15s;
+    }
+
+    .mobile-menu.active .mobile-menu-links a:nth-child(3) {
+        transition-delay: 0.20s;
+    }
+
+    .mobile-menu.active .mobile-menu-links a:nth-child(4) {
+        transition-delay: 0.25s;
+    }
+
+    .mobile-menu.active .mobile-menu-links a:nth-child(5) {
+        transition-delay: 0.30s;
+    }
+
+
+    /* -------------------------
+       NUMBERS
+       ------------------------- */
+
+    .mobile-menu-links small {
+        color: #a8cc48;
+
+        font-size: 12px;
+        font-weight: 400;
+
+        transform: translateY(-4px);
+
+        min-width: 0;
+    }
+
+
+    /* -------------------------
+       HOVER
+       ------------------------- */
+
+    .mobile-menu-links a:hover {
+        color: #a8cc48;
+    }
+
+
+    /* -------------------------
+       FOOTER
+       ------------------------- */
+
+    .mobile-menu-footer {
+        margin-top: auto;
+
+        padding-top: 30px;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        gap: 20px;
+
+        width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+
+        color: #d2d2d2;
+
+        font-family: "Alexandria", sans-serif;
+
+        font-size: 11px;
+
+        line-height: 1.5;
+    }
+
+
+    .mobile-menu-footer span {
+        min-width: 0;
+        max-width: 100%;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* -------------------------
+       HAMBURGER → X
+       ------------------------- */
+
+    .mobile-nav.menu-open
+    .mobile-menu-btn span:first-child {
+        width: 32px;
+
+        transform:
+            translateY(4.5px)
+            rotate(45deg);
+    }
+
+
+    .mobile-nav.menu-open
+    .mobile-menu-btn span:last-child {
+        width: 32px;
+
+        transform:
+            translateY(-4.5px)
+            rotate(-45deg);
+    }
+
+
+    /* -------------------------
+       PAGE LOCK
+       ------------------------- */
+
+    html.mobile-menu-open,
+    body.mobile-menu-open {
+        overflow: hidden;
+        overflow-x: hidden;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 767px) {
+
+    .mobile-nav {
+        height: 68px;
+
+        padding: 0 20px;
+    }
+
+
+    .mobile-logo {
+        font-size: 12px;
+    }
+
+
+    .mobile-menu {
+        padding: 95px 20px 25px;
+    }
+
+
+    .mobile-menu-top {
+        font-size: 9px;
+    }
+
+
+    .mobile-menu-links {
+        margin-top: 28px;
+    }
+
+
+    .mobile-menu-links a {
+        grid-template-columns: 35px minmax(0, 1fr);
+
+        padding: 11px 0;
+
+        font-size: clamp(32px, 9vw, 48px);
+    }
+
+
+    .mobile-menu-links small {
+        font-size: 10px;
+    }
+
+
+    .mobile-menu-footer {
+        flex-direction: column;
+
+        gap: 5px;
+
+        font-size: 10px;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    .mobile-nav {
+        padding: 0 16px;
+    }
+
+
+    .mobile-menu {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    .mobile-menu-links a {
+        grid-template-columns: 30px minmax(0, 1fr);
+
+        font-size: 30px;
+    }
+}
