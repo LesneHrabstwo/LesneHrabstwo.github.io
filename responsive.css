@@ -1,0 +1,964 @@
+/* =========================================================
+   LEŚNE HRABSTWO — RESPONSIVE CSS
+   Ten plik dodaj PO style.css w każdym pliku HTML:
+
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="responsive.css">
+
+   Breakpoints:
+   - tablet: 991px
+   - mobile: 767px
+   - small mobile: 480px
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET — do 991px
+   ========================================================= */
+
+@media (max-width: 1500px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    .maxWidth{
+        margin-inline: auto;
+        max-width: 80vw;
+        size: auto;
+        padding: 0px;
+    }
+
+    .tekst1 ol, .uslugiTekst ol {
+        margin-inline: auto;
+    }
+
+   
+    
+    .right{
+        text-align: center;
+    }
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .bg {
+        width: 100%;
+        max-width: 100%;
+        background-attachment: scroll;
+    }
+
+    section {
+        margin-inline: auto;
+        max-width: calc(100vw - 125px);
+        min-height: auto;
+    }
+
+    section:not(.hero){
+        padding-block: 8rem;
+    }
+
+    .cursorTracker{
+        display: none;
+    }
+
+    ol{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 0;
+        list-style: none;
+        gap: 1rem;
+        counter-reset: my-counter;
+    }
+
+    ol li {
+  counter-increment: my-counter;
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: clamp(19px, 2.5vw, 26px);
+}
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: clamp(42px, 7vw, 65px);
+        line-height: 1.1;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        max-width: 100%;
+        font-size: clamp(19px, 2.5vw, 26px);
+        line-height: 1.5;
+        margin-inline: auto;
+    }
+
+    a {
+        font-size: 22px;
+    }
+
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        display: none;
+    }
+
+    .tablet{
+    top: 0;
+    overflow: hidden;
+    right: 0;
+    left: 0;
+    transform: none;
+    position: fixed;
+    z-index: 30;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.200);
+}
+
+.pages{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    width: fit-content;
+}
+
+.hb{
+    padding: 0;
+    filter: saturate(150%);
+    border-radius: 5px;
+    background-color: #ffffff00;
+}
+
+
+
+
+    .links {
+        max-width: 1.6rem;
+    }
+
+    .navbar a {
+        padding: 0.35rem;
+    }
+
+
+    /* ---------- HOME HERO ---------- */
+
+    .hero {
+        min-width: 100%;
+        max-width: 100%;
+        padding-bottom: 20rem;
+    }
+
+    .titleBtn {
+        min-height: 100vh;
+        height: auto;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .heroH {
+        font-size: clamp(45px, 8vw, 80px);
+        max-width: 100%;
+    }
+
+    .pH {
+        font-size: clamp(20px, 3vw, 30px);
+        max-width: 90%;
+    }
+
+    .btns {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button{
+        margin-inline: auto;
+    }
+
+
+    /* ---------- TEMPLATE HERO ---------- */
+
+    .heroTemplate {
+        max-width: 100%;
+        width: 100%;
+        max-height: 55vh;
+        margin-top: 1rem;
+    }
+
+    .templateTekst {
+        gap: 2rem;
+        
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .heroTekstTemplate {
+        font-size: clamp(42px, 7vw, 65px);
+    }
+
+    .heroTekstTemplateP {
+        font-size: clamp(18px, 2.4vw, 25px);
+        max-width: 50%;
+    }
+
+
+    /* ---------- TWO COLUMN SECTIONS ---------- */
+
+    .pokoje {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3rem;
+    }
+
+    .tekst1 {
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .Img1 {
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        height: 55vh;
+        object-fit: cover;
+    }
+
+    .uslugi {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    .uslugiTekst {
+        width: 100%;
+        max-width: 100%;
+        gap: 1.5rem;
+    }
+
+    .teras,
+    .bali {
+        width: 100%;
+        max-width: 100%;
+        height: 45vh;
+        object-fit: cover;
+    }
+
+    .bali {
+        height: 35vh;
+    }
+
+
+    /* ---------- TEXT HORIZONTAL ---------- */
+
+    .teksthorizontal {
+        flex-direction: column;
+        gap: 2rem;
+        padding-block: 3rem;
+    }
+
+    .teksthorizontal > * {
+        max-width: 100%;
+    }
+
+    
+
+
+    /* ---------- OKOLICA / SINGLE IMAGE ---------- */
+
+    .okolicaTekst {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .okolicaZdj {
+        width: 100%;
+        max-height: 55vh;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .tekstFioletowy {
+        width: 100%;
+    }
+
+
+    /* ---------- GALLERY ---------- */
+
+    /* ---------- GALLERY ---------- */
+
+.galeriaHead {
+    width: 100%;
+    max-width: calc(100vw - 125px);
+    box-sizing: border-box;
+}
+
+.galeriaHead h1{
+    padding-top: 10rem;
+}
+
+.galeriaSec {
+    width: 100%;
+    max-width: calc(100vw - 125px);
+    margin: 0 auto;
+    padding: 1vh 0;
+    box-sizing: border-box;
+}
+
+.imgRow {
+    width: 100%;
+    max-width: 100%;
+}
+
+.imgRow ul {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.imgRow li {
+    width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.imgRow > * > * > * {
+    display: block;
+
+    width: 100%;
+    height: 28rem;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: cover;
+}
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        width: 100%;
+        height: auto;
+        min-height: 70vh;
+        box-sizing: border-box;
+        padding-block: 3rem;
+        gap: 3rem;
+    }
+
+    footer > * {
+        margin-inline: auto;
+    }
+
+    .mainFooter {
+        margin-inline: auto;
+        gap: 2rem;
+    }
+
+    .footerImg ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        padding-inline: 3rem;
+    }
+
+    .footerImg > * > * > * {
+        width: 100%;
+        height: 12rem;
+    }
+
+    .lesne > * {
+        font-size: clamp(70px, 12vw, 120px);
+    }
+
+    .cursorTracker img {
+        width: 10rem;
+    }
+
+    .credits {
+        gap: 1rem;
+    }
+
+
+}
+/* =========================================================
+   MOBILE — do 767px
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* ---------- GLOBAL ---------- */
+
+    section {
+        margin-inline: 20px 20px;
+        max-width: calc(100vw - 40px);
+        padding-block: 7vh;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: clamp(32px, 9vw, 48px);
+        line-height: 1.12;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.55;
+    }
+
+    a {
+        font-size: 18px;
+    }
+
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transform: none;
+        width: 100%;
+        height: 4.5rem;
+        border-radius: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .navbar:hover {
+        width: 100%;
+        align-items: center;
+    }
+
+    .navbar-section {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .navbar-section:nth-child(2) {
+        flex: 1;
+        justify-content: space-evenly;
+    }
+
+    .navbar-section:nth-child(3) {
+        gap: 0.2rem;
+    }
+
+    .navbar a {
+        width: auto;
+        padding: 0.25rem;
+    }
+
+    .navT {
+        font-size: 0;
+        min-width: auto;
+        margin: 0;
+        line-height: 1;
+    }
+
+    #one::before,
+    #two::before,
+    #three::before,
+    #four::before,
+    #five::before {
+        font-size: 14px;
+        font-family: "Alexandria", sans-serif;
+        color: var(--lightBlue);
+    }
+
+    #navBarr:hover #one::before {
+        content: "01.";
+    }
+
+    #navBarr:hover #two::before {
+        content: "02.";
+    }
+
+    #navBarr:hover #three::before {
+        content: "03.";
+    }
+
+    #navBarr:hover #four::before {
+        content: "04.";
+    }
+
+    #navBarr:hover #five::before {
+        content: "05.";
+    }
+
+    .hb {
+        max-width: 2.4rem;
+        min-width: 2.4rem;
+        margin: 0;
+    }
+
+    .links {
+        max-width: 1.5rem;
+    }
+
+
+    /* ---------- HOME HERO ---------- */
+
+    .titleBtn {
+        min-height: 100svh;
+        padding: 0 20px 5rem;
+        gap: 1.5rem;
+    }
+
+    .heroH {
+        font-size: clamp(38px, 11vw, 65px);
+        line-height: 1.05;
+    }
+
+    .pH {
+        font-size: 18px;
+        line-height: 1.4;
+        max-width: 95%;
+    }
+
+    .btns {
+        flex-direction: column;
+        align-items: stretch;
+        width: min(100%, 320px);
+    }
+
+    .btns button {
+        width: 100%;
+    }
+
+    .btnA {
+        font-size: 18px;
+    }
+
+
+    /* ---------- TEMPLATE HERO ---------- */
+
+    .heroTemplate {
+        width: 100%;
+        max-width: 100%;
+        max-height: 45vh;
+        min-height: 250px;
+        object-fit: cover;
+        margin-top: 0;
+    }
+
+    .templateTekst {
+        flex-direction: column;
+        gap: 1.25rem;
+        align-items: flex-start;
+
+    }
+
+    .heroTekstTemplate,
+    .heroTekstTemplateP {
+        max-width: 100%;
+    }
+
+    .heroTekstTemplate {
+        font-size: clamp(34px, 10vw, 48px);
+    }
+
+    .heroTekstTemplateP {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+
+    /* ---------- ROOMS / SERVICES ---------- */
+
+    .pokoje,
+    .uslugi {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    .tekst1,
+    .uslugiTekst {
+        width: 100%;
+        max-width: 100%;
+        gap: 1.25rem;
+    }
+
+    .Img1,
+    .teras,
+    .bali {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        min-height: 0;
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    .bali {
+        height: 35vh;
+    }
+
+    .fioletowy {
+        object-position: center;
+    }
+
+    button {
+        padding: 10px 16px;
+        max-width: 100%;
+    }
+
+    .bT {
+        font-size: 17px;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    .teksthorizontal {
+        flex-direction: column;
+        padding-block: 2rem;
+        gap: 1.5rem;
+    }
+
+    .teksthorizontal > * {
+        max-width: 100%;
+    }
+
+    
+
+
+    /* ---------- OKOLICA ---------- */
+
+    .okolicaTekst {
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .okolicaZdj {
+        width: 100%;
+        max-width: 100%;
+        max-height: 50vh;
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    .tekstFioletowy {
+        width: 100%;
+    }
+
+
+    /* ---------- GALLERY ---------- */
+
+    .galeriaHead {
+    width: calc(100% - 40px);
+    max-width: none;
+ padding-top: 10rem;
+    margin: 0 auto 6vh;
+    padding-top: 0;
+}
+
+.galeriaSec {
+    width: calc(100% - 40px);
+    max-width: none;
+
+    margin: 0 auto;
+
+    padding: 1rem 0;
+
+    box-sizing: border-box;
+}
+
+    .imgRow ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .imgRow > * > * > * {
+        width: 100%;
+        height: 15rem;
+        object-fit: cover;
+    }
+
+    .hover-icy:hover {
+        transform: none;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        min-height: auto;
+        padding: 3rem 0 6rem;
+        gap: 2.5rem;
+    }
+
+    footer > *,
+    .mainFooter {
+        margin-inline: 20px;
+    }
+
+    .mainFooter {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .mainFooter p {
+        max-width: 100%;
+    }
+
+    .footerImg ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+
+    .footerImg > * > * > * {
+        width: 100%;
+        height: 10rem;
+    }
+
+    .lesne {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .lesne > * {
+        font-size: clamp(55px, 17vw, 90px);
+        line-height: 0.95;
+    }
+
+    .cursorTracker {
+        position: relative;
+        left: auto;
+        margin-top: 2rem;
+        transform: none;
+    }
+
+    .cursorTracker img {
+        width: 8rem;
+    }
+
+    .credits {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .credits p {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE — do 480px
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    section {
+        margin-inline: 16px;
+        max-width: calc(100vw - 32px);
+        padding-block: 6vh;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: clamp(29px, 10vw, 40px);
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    /* Navbar */
+
+    .navbar {
+        height: 4rem;
+    }
+
+    .navbar-section:nth-child(2) {
+        gap: 0;
+    }
+
+    .navbar-section:nth-child(3) {
+        display: none;
+    }
+
+    .hb {
+        max-width: 2.1rem;
+        min-width: 2.1rem;
+    }
+
+    .links {
+        max-width: 1.3rem;
+    }
+
+    #one::before,
+    #two::before,
+    #three::before,
+    #four::before,
+    #five::before {
+        font-size: 12px;
+    }
+
+
+    /* Hero */
+
+    .titleBtn {
+        padding-inline: 16px;
+        padding-bottom: 4rem;
+    }
+
+    .heroH {
+        font-size: clamp(34px, 12vw, 52px);
+    }
+
+    .pH {
+        font-size: 16px;
+    }
+
+    .heroTemplate {
+        min-height: 210px;
+        max-height: 38vh;
+    }
+
+    .heroTekstTemplate {
+        font-size: clamp(30px, 10vw, 40px);
+    }
+
+    .heroTekstTemplateP {
+        font-size: 16px;
+    }
+
+
+    /* Images */
+
+    .Img1,
+    .teras {
+        height: 42vh;
+    }
+
+    .bali {
+        height: 28vh;
+    }
+
+    .okolicaZdj {
+        height: 38vh;
+    }
+
+
+    /* Gallery */
+
+    .imgRow ul {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem;
+    }
+
+    .imgRow > * > * > * {
+        height: 12rem;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding-bottom: 5rem;
+    }
+
+    .footerImg > * > * > * {
+        height: 8rem;
+    }
+
+    .lesne > * {
+        font-size: 16vw;
+    }
+
+    .cursorTracker img {
+        width: 6rem;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+   Wyłączenie efektów hover, które mogą być nieprzyjemne
+   na telefonach/tabletach.
+   ========================================================= */
+
+@media (hover: none) {
+
+    .hover-icy:hover {
+        transform: none;
+        filter: none;
+    }
+
+    .navbar:hover {
+        width: 100%;
+    }
+
+    button:hover {
+        box-shadow: none;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
